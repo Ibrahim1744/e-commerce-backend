@@ -40,7 +40,9 @@ app.use(xss())
 app.use(compression())
 
 // security headers (helmet)
-app.use(helmet())
+app.use(helmet({
+  crossOriginResourcePolicy: false,
+}))
 
 // rate limiting
 // app.use(rateLimiting({
